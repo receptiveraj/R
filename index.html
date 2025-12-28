@@ -335,18 +335,13 @@ SocialSphere LinkHub is a sleek and futuristic button that seamlessly connects a
 </script>
 
 <script>
-  // Select both floating buttons
   const floatingButtons = document.querySelectorAll('.floating-btn');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) { // Hide after scrolling down 200px
-      floatingButtons.forEach(btn => {
-        btn.classList.add('hidden');
-      });
+    if (window.scrollY > 150) { // Hide after scrolling ~150px down
+      floatingButtons.forEach(btn => btn.classList.add('hidden'));
     } else {
-      floatingButtons.forEach(btn => {
-        btn.classList.remove('hidden');
-      });
+      floatingButtons.forEach(btn => btn.classList.remove('hidden'));
     }
   });
 </script>
