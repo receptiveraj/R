@@ -6,6 +6,8 @@
   <title>Rajveer Chronicles</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -21,6 +23,65 @@
     .glow {
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
     }
+
+
+/* Floating Contact Buttons - Keeping your original pulsing & 3D feel */
+.floating-btn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 265px;
+  right: 3px;
+  background: linear-gradient(145deg, #25d366, #128c7e);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  transition: all 0.4s ease; /* Smooth fade + slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.floating-btn.call {
+  background: linear-gradient(145deg, #0891b2, #0e7490);
+  bottom: 340px; /* Stacked above WhatsApp */
+}
+
+/* Hover & Active - Your original 3D effects preserved */
+.floating-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.floating-btn:active {
+  transform: translateY(3px) scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulsing icon animation - KEPT EXACTLY AS BEFORE */
+.floating-btn i {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* NEW: Hidden state when scrolled down */
+.floating-btn.hidden {
+  opacity: 0;
+  transform: translateY(80px) scale(0.8); /* Slides down + slight shrink */
+  pointer-events: none;
+}
+  
+    
 
 .three-d-btn {
   display: inline-block;
